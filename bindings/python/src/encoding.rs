@@ -440,7 +440,7 @@ impl PyEncoding {
     ///     direction (:obj:`str`, defaults to :obj:`right`):
     ///         Truncate direction
     #[args(stride = "0")]
-    #[args(direction = "\"right\"")]
+    #[pyo3(signature = (max_length, stride = 0, direction = "right"))]
     #[pyo3(text_signature = "(self, max_length, stride=0, direction='right')")]
     fn truncate(&mut self, max_length: usize, stride: usize, direction: &str) -> PyResult<()> {
         let tdir = match direction {
